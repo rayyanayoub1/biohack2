@@ -66,12 +66,12 @@ while true % Infinite loop to continuously detect the face
                 disL=abs(0-pupil_x);    %distance from left edge to center point
                 disR=abs(bboxeyes(1,3)/3-pupil_x);%distance from right edge to center point
                 subplot(2,2,4);
-                if disL>disR+25;
+                if disL>disR+25; %if eye pupils are to far to the right, display image of right text box.
                     subimage(right);
 beep;
                 else if disR>disL
                     subimage(left);
-                    beep;
+                    beep; % makes beep when person looks to the left. 
                     
                     else
                        subimage(straight); 
